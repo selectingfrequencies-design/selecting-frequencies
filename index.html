@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Selecting Frequencies | Ambient Music & Binaural Beats</title>
-  <meta name="description"
-    content="Official website of Selecting Frequencies. Human-made ambient music, ethereal drone soundscapes and binaural beats for relaxation, meditation, focus, yoga, sleep and flow state listening." />
+  <meta
+    name="description"
+    content="Official website of Selecting Frequencies. Human-made ambient music, ethereal drone soundscapes and binaural beats for relaxation, meditation, focus, yoga, sleep and flow state listening."
+  />
 
   <style>
     :root {
@@ -109,7 +110,6 @@
         opacity: 0;
         transform: translateY(8px);
       }
-
       to {
         opacity: 1;
         transform: translateY(0);
@@ -126,17 +126,19 @@
       overflow: hidden;
       border: 1px solid var(--border);
       background:
-        linear-gradient(90deg,
+        linear-gradient(
+          90deg,
           rgba(8, 16, 20, 0.94) 0%,
           rgba(8, 16, 20, 0.82) 38%,
-          rgba(8, 16, 20, 0.35) 100%),
+          rgba(8, 16, 20, 0.35) 100%
+        ),
         url("images/sf-background.png");
       background-size: cover;
       background-position: center;
       box-shadow: 0 0 90px rgba(125, 223, 200, 0.12);
     }
 
-    .hero>div:first-child {
+    .hero > div:first-child {
       max-width: 620px;
       position: relative;
       z-index: 2;
@@ -333,6 +335,40 @@
       object-position: center;
     }
 
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .email-line {
+      margin-top: 16px;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      max-width: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .copy-inline {
+      background: none;
+      border: none;
+      color: var(--accent);
+      font: inherit;
+      font-size: 0.9rem;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .copy-inline:hover {
+      text-decoration: underline;
+    }
+
     .contact-layout {
       display: grid;
       grid-template-columns: minmax(0, 1fr) 42%;
@@ -450,7 +486,6 @@
       .footer-logo {
         width: 64px;
       }
-
       .contact-layout {
         grid-template-columns: 1fr;
         gap: 32px;
@@ -483,11 +518,9 @@
       <div class="hero">
         <div>
           <div class="eyebrow">Human-made ambient music</div>
-          <h1>Human-made ambient music and binaural beats.</h1>
+          <h1>Soundscapes for focus, relaxation, yoga and sleep.</h1>
           <p>
-            Selecting Frequencies creates ethereal drone soundscapes for relaxation, meditation, focus, yoga, sleep and
-            flow state listening. Each soundscape is shaped as a
-            sonic journey through texture, atmosphere and feeling.
+            Selecting Frequencies creates human-made ambient music, binaural beats and ethereal drone soundscapes for relaxation, meditation, focus, yoga, sleep and flow state listening.
           </p>
 
           <div class="buttons">
@@ -502,16 +535,21 @@
       </div>
 
       <div class="home-button-visual">
-        <img src="images/home-buttons.png"
-          alt="Ambient Soundscapes, Binaural Beats and Human Made No AI visual buttons for Selecting Frequencies.">
+        <img
+          src="images/home-buttons.png"
+          alt="Ambient Soundscapes, Binaural Beats and Human Made No AI visual buttons for Selecting Frequencies."
+        >
       </div>
     </section>
 
     <section id="selecting-frequencies" class="tab-content">
       <div class="about-layout">
         <div class="about-visual">
-          <img class="about-photo" src="images/SF.jpg"
-            alt="Photo of Julien Georges, the producer behind Selecting Frequencies.">
+          <img
+            class="about-photo"
+            src="images/SF.jpg"
+            alt="Photo of Julien Georges, the producer behind Selecting Frequencies."
+          >
         </div>
 
         <div class="about-intro-card">
@@ -601,20 +639,24 @@
             use the links below.
           </p>
 
-          <div class="buttons">
-            <a class="button primary"
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=selectingfrequencies@gmail.com" target="_blank">
+          <div class="contact-actions">
+            <a class="button primary" href="mailto:selectingfrequencies@gmail.com">
               Email
             </a>
+
             <a class="button secondary" href="https://hyperfollow.com/selectingfrequencies" target="_blank">
               Link Hub
             </a>
           </div>
+
+          <p class="email-line">
+            <span>selectingfrequencies@gmail.com</span>
+            <button class="copy-inline" type="button" onclick="copyEmail()">Copy</button>
+          </p>
         </div>
 
         <div class="contact-image">
-          <img src="images/contact-studio.jpg"
-            alt="Selecting Frequencies studio setup with keyboard, monitors, speakers and microphones">
+          <img src="images/contact-studio.jpg" alt="Selecting Frequencies studio setup with keyboard, monitors, speakers and microphones">
         </div>
       </div>
     </section>
@@ -623,7 +665,11 @@
   <footer class="site-footer">
     <p>© 2026 Selecting Frequencies. Human-made ambient music and binaural soundscapes.</p>
 
-    <img class="footer-logo" src="images/SF-logo-tsp.png" alt="Selecting Frequencies logo">
+    <img
+      class="footer-logo"
+      src="images/SF-logo-tsp.png"
+      alt="Selecting Frequencies logo"
+    >
   </footer>
 
   <script>
@@ -647,7 +693,28 @@
         openTab(button.dataset.tab);
       });
     });
+
+    function copyEmail() {
+      const email = "selectingfrequencies@gmail.com";
+
+      navigator.clipboard.writeText(email).then(() => {
+        const button = document.querySelector(".copy-inline");
+        if (!button) return;
+
+        button.textContent = "Copied";
+        setTimeout(() => {
+          button.textContent = "Copy";
+        }, 1600);
+      }).catch(() => {
+        const button = document.querySelector(".copy-inline");
+        if (!button) return;
+
+        button.textContent = "Copy failed";
+        setTimeout(() => {
+          button.textContent = "Copy";
+        }, 1600);
+      });
+    }
   </script>
 </body>
-
 </html>
