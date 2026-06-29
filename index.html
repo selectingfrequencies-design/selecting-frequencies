@@ -66,6 +66,11 @@
       color: var(--text);
     }
 
+    .logo-link {
+      color: inherit;
+      text-decoration: none;
+    }
+
     .tabs {
       display: flex;
       gap: 10px;
@@ -416,6 +421,11 @@
       line-height: 1;
     }
 
+    .footer-logo-link {
+      display: block;
+      line-height: 0;
+    }
+
     .footer-logo {
       width: 58px;
       height: auto;
@@ -502,7 +512,7 @@
 <body>
   <header>
     <nav class="nav">
-      <div class="logo">Selecting Frequencies</div>
+      <div class="logo"><a class="logo-link" href="index.html">Selecting Frequencies</a></div>
 
       <div class="tabs">
         <button class="tab-button active" data-tab="home">Home</button>
@@ -524,13 +534,13 @@
           </p>
 
           <div class="buttons">
-            <a class="button secondary" href="https://open.spotify.com/playlist/0Wr1WB7HNBWhJJ5hscV9XM?si=6037a4a061354f0f" target="_blank">
-              Playlist
+            <a class="button secondary" href="ambient-soothes/index.html">
+              Ambient Soothes
             </a>
             <a class="button primary" href="https://hyperfollow.com/selectingfrequencies" target="_blank">
               Listen Now
             </a>
-            <a class="button secondary" href="#" onclick="openTab('selecting-frequencies')">
+            <a class="button secondary" href="#selecting-frequencies" onclick="openTab('selecting-frequencies'); return false;">
               About the Project
             </a>
           </div>
@@ -668,11 +678,13 @@
   <footer class="site-footer">
     <p>© 2026 Selecting Frequencies. Human-made ambient music and binaural soundscapes.</p>
 
-    <img
-      class="footer-logo"
-      src="images/SF-logo-tsp.png"
-      alt="Selecting Frequencies logo"
-    >
+    <a class="footer-logo-link" href="index.html" aria-label="Back to Selecting Frequencies home">
+      <img
+        class="footer-logo"
+        src="images/SF-logo-tsp.png"
+        alt="Selecting Frequencies logo"
+      >
+    </a>
   </footer>
 
   <script>
@@ -696,6 +708,24 @@
         openTab(button.dataset.tab);
       });
     });
+
+    const hashToTab = {
+      "#home": "home",
+      "#about": "selecting-frequencies",
+      "#selecting-frequencies": "selecting-frequencies",
+      "#music": "music",
+      "#contact": "contact"
+    };
+
+    function openTabFromHash() {
+      const tabId = hashToTab[window.location.hash];
+      if (tabId) {
+        openTab(tabId);
+      }
+    }
+
+    openTabFromHash();
+    window.addEventListener("hashchange", openTabFromHash);
 
     function copyEmail() {
       const email = "selectingfrequencies@gmail.com";
