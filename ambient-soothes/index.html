@@ -1,0 +1,346 @@
+<!-- AMBIENT SOOTHES PAGE: selectingfrequencies.com/ambient-soothes/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Ambient Soothes by Selecting Frequencies | Focus, Relax, Yoga & Sleep</title>
+  <meta
+    name="description"
+    content="Ambient Soothes by Selecting Frequencies is a human-made ambient playlist for focus, relaxation, yoga, sleep, calm mornings and deep work."
+  />
+  <link rel="canonical" href="https://selectingfrequencies.com/ambient-soothes/" />
+
+  <style>
+    :root {
+      --bg: #081014;
+      --bg-soft: #101c22;
+      --panel: rgba(255, 255, 255, 0.07);
+      --text: #eef7f6;
+      --muted: #a9b8b5;
+      --accent: #7ddfc8;
+      --accent-2: #bfa3ff;
+      --border: rgba(255, 255, 255, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Inter, Arial, sans-serif;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(125, 223, 200, 0.28), transparent 32%),
+        radial-gradient(circle at 85% 10%, rgba(191, 163, 255, 0.24), transparent 34%),
+        radial-gradient(circle at 50% 90%, rgba(68, 132, 255, 0.16), transparent 38%),
+        linear-gradient(135deg, #05090c 0%, #081014 45%, #102027 100%);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(8, 16, 20, 0.78);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .logo {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    main {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 70px 24px;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 560px;
+      display: flex;
+      align-items: center;
+      padding: 70px;
+      border-radius: 36px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(
+          90deg,
+          rgba(8, 16, 20, 0.94) 0%,
+          rgba(8, 16, 20, 0.82) 38%,
+          rgba(8, 16, 20, 0.35) 100%
+        ),
+        url("images/sf-background.png");
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 0 90px rgba(125, 223, 200, 0.12);
+    }
+
+    .hero > div:first-child {
+      max-width: 620px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.8rem;
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 7vw, 5.6rem);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      margin-bottom: 18px;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 680px;
+      margin-bottom: 22px;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .button {
+      display: inline-block;
+      text-decoration: none;
+      padding: 13px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: #06110f;
+    }
+
+    .button.secondary {
+      color: var(--text);
+      border: 1px solid var(--border);
+      background: var(--panel);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .playlist-panel {
+      margin-top: 42px;
+      padding: 34px;
+      border-radius: 28px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.035);
+      box-shadow: 0 0 60px rgba(125, 223, 200, 0.08);
+    }
+
+    .spotify-embed {
+      margin-top: 28px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--panel);
+    }
+
+    .spotify-embed iframe {
+      display: block;
+      width: 100%;
+      border: 0;
+    }
+
+    .site-footer {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 30px 24px 50px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      font-size: 0.9rem;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+    }
+
+    .site-footer p {
+      margin: 0;
+      max-width: none;
+      font-size: 0.9rem;
+      line-height: 1;
+    }
+
+    .footer-logo {
+      width: 58px;
+      height: auto;
+      opacity: 0.42;
+      display: block;
+      transform: translateY(2px);
+      filter: drop-shadow(0 0 14px rgba(125, 223, 200, 0.12));
+    }
+
+    @media (max-width: 800px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hero {
+        min-height: 520px;
+        padding: 36px 24px;
+        background-position: center;
+      }
+
+      .playlist-panel {
+        padding: 22px;
+        border-radius: 22px;
+      }
+
+      .site-footer {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .footer-logo {
+        width: 64px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="nav">
+      <div class="logo">Selecting Frequencies</div>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <div class="hero">
+        <div>
+          <div class="eyebrow">Human-curated ambient playlist</div>
+
+          <h1>Ambient Soothes by Selecting Frequencies</h1>
+
+          <p>
+            Ambient Soothes is curated by Selecting Frequencies: a human-made ambient playlist
+            for focus, relaxation, yoga, sleep, calm mornings and deep work.
+          </p>
+
+          <p>
+            Updated with peaceful ambient, new age, drone, cinematic soundscapes and warm
+            meditative textures.
+          </p>
+
+          <div class="buttons">
+            <a class="button primary" href="https://open.spotify.com/playlist/0Wr1WB7HNBWhJJ5hscV9XM" target="_blank" rel="noopener">
+              Open on Spotify
+            </a>
+
+            <a class="button secondary" href="../index.html">
+              Back to Home
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="playlist-panel">
+        <div class="eyebrow">Ambient Soothes</div>
+
+        <h2>Human-made ambient music for rest, focus and inner stillness.</h2>
+
+        <p>
+          Ambient Soothes focuses on soothing, human-made ambient music for calm, relaxation,
+          yoga, stress relief, sleep, focus and inner stillness. It is made for both spiritual
+          and non-spiritual listeners: for those seeking meditation and inner stillness, and for
+          those who simply need focus, rest or a quieter mind.
+        </p>
+
+        <p>
+          The playlist is curated by careful listening rather than automated selection, with
+          attention to atmosphere, emotional depth, natural textures and slow-evolving sound.
+        </p>
+
+        <p>
+          Because AI music is getting harder to distinguish, the
+          <a href="https://www.submithub.com/playlist-checker" target="_blank" rel="noopener">
+            SubmitHub playlist checker
+          </a>
+          is used to help verify that the tracks are human-made.
+        </p>
+
+        <div class="spotify-embed">
+          <iframe
+            style="border-radius:12px"
+            src="https://open.spotify.com/embed/playlist/0Wr1WB7HNBWhJJ5hscV9XM?utm_source=generator"
+            height="380"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+          </iframe>
+        </div>
+
+        <div class="buttons">
+          <a class="button primary" href="https://open.spotify.com/playlist/0Wr1WB7HNBWhJJ5hscV9XM" target="_blank" rel="noopener">
+            Open Ambient Soothes on Spotify
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Selecting Frequencies. Human-made ambient music and binaural soundscapes.</p>
+
+    <img
+      class="footer-logo"
+      src="images/SF-logo-tsp.png"
+      alt="Selecting Frequencies logo"
+    >
+  </footer>
+</body>
+</html>
